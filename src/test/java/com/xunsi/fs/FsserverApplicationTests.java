@@ -1,4 +1,4 @@
-package com.xunsi.fs.main;
+package com.xunsi.fs;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
