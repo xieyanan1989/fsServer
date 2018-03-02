@@ -1,12 +1,12 @@
 package com.xunsi.fs.dao;
 
+import org.apache.commons.dbcp.BasicDataSource;
+
 import java.beans.PropertyVetoException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-
-import org.apache.commons.dbcp.BasicDataSource;
 
 public class DatabaseConnection
 {

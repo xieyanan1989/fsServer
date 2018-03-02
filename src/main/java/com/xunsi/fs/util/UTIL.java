@@ -5,12 +5,6 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.nio.channels.FileChannel;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-import java.util.regex.Pattern;
-
-import org.apache.log4j.Logger;
 
 public class UTIL {
 	public static String user_dir = "userimg/";

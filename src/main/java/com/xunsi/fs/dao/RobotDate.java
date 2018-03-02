@@ -1,13 +1,14 @@
 package com.xunsi.fs.dao;
 
+import org.apache.log4j.Logger;
+
 import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
-import org.apache.log4j.Logger;
 
 public class RobotDate
 {
-	protected static Logger log = Logger.getLogger(RobotDate.class);
+	private static Logger log = Logger.getLogger(RobotDate.class);
 
 	public static void insert(String json, Integer lotterId, Integer playType) { Integer success = null;
 	Connection conn = null;

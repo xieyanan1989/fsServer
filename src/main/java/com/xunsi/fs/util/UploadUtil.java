@@ -1,26 +1,20 @@
 package com.xunsi.fs.util;
 
-import java.io.BufferedInputStream;  
-import java.io.BufferedOutputStream;  
-import java.io.File;  
-import java.io.FileInputStream;  
-import java.io.PrintWriter;  
-import java.net.URLEncoder;  
-import java.util.ArrayList;  
-import java.util.HashMap;  
-import java.util.Iterator;  
-import java.util.List;  
-import java.util.Map;  
-  
-import javax.servlet.http.HttpServletRequest;  
-import javax.servlet.http.HttpServletResponse;  
-  
-import org.apache.commons.fileupload.FileItem;  
-import org.apache.commons.fileupload.FileUploadException;  
-import org.apache.commons.fileupload.FileUploadBase.SizeLimitExceededException;  
-import org.apache.commons.fileupload.disk.DiskFileItemFactory;  
-import org.apache.commons.fileupload.servlet.ServletFileUpload;  
+import org.apache.commons.fileupload.FileItem;
+import org.apache.commons.fileupload.FileUploadBase.SizeLimitExceededException;
+import org.apache.commons.fileupload.FileUploadException;
+import org.apache.commons.fileupload.disk.DiskFileItemFactory;
+import org.apache.commons.fileupload.servlet.ServletFileUpload;
 import org.apache.log4j.Logger;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.*;
+import java.net.URLEncoder;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
 
 public class UploadUtil {  
 	protected static Logger log=Logger.getLogger(UploadUtil.class);

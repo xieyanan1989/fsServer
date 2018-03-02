@@ -244,7 +244,7 @@ public class GeoHash {
   
     public static void main(String[] args) {  
         // TODO Auto-generated method stub   
-        GeoHash g = new GeoHash(40.222012, 116.248283);  
+        GeoHash g = new GeoHash(40.222012, 116.248283);
         System.out.println(g.getGeoHashBase32());  
         System.out.println(g.getGeoHashBase32For9());  
         

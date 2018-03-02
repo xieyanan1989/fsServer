@@ -22,7 +22,7 @@ public class FsController {
     @Autowired
     AllService allService;
 
-    @RequestMapping(value = "/user/login",method = RequestMethod.POST)
+    @RequestMapping(value = "/user/login")
     public String login(@RequestParam String sig,@RequestParam String json){
         boolean valid = MD5Tools.valid(json, sig);
         if(valid == false){

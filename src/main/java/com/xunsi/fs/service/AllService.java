@@ -1,11 +1,12 @@
 package com.xunsi.fs.service;
-import java.util.HashMap;
-import java.util.Map;
 
 import com.xunsi.fs.dao.AllDao;
 import com.xunsi.fs.util.UTIL;
 import org.apache.log4j.Logger;
 import org.springframework.stereotype.Service;
+
+import java.util.HashMap;
+import java.util.Map;
 
 @Service
 public class AllService {
@@ -167,7 +168,6 @@ public class AllService {
 	 * @param username	用户名
 	 * @param saletype	0-售罄,1-预售,2-销售中
 	 * @param pagenum 	页数
-	 * @param pagecount 每页条数
 	 * @return
 	 */
 	public Map getUsersProduct(String username, String saletype, int pagenum, int pagesize) {
@@ -183,7 +183,6 @@ public class AllService {
 	 * @param username	用户名
 	 * @param saletype	0-成功,1-用户失败,2-店家失败,3-转让,4-订制中
 	 * @param pagenum 	页数
-	 * @param pagecount 每页条数
 	 * @return
 	 */
 	public Map getPersonProduct(String username, String saletype, int pagenum,int pagesize) {

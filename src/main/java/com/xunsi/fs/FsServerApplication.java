@@ -1,12 +1,12 @@
-package com.xunsi.fs.main;
+package com.xunsi.fs;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class FsserverApplication {
+public class FsServerApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(FsserverApplication.class, args);
+		SpringApplication.run(FsServerApplication.class, args);
 	}
 }

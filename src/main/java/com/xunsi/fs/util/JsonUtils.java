@@ -1,11 +1,9 @@
 package com.xunsi.fs.util;
 
-import java.io.PrintWriter;
-import java.util.Map;
-import javax.servlet.http.HttpServletResponse;
-
 import org.apache.log4j.Logger;
 import org.json.JSONObject;
+
+import java.util.Map;
 
 public class JsonUtils {
 	protected static Logger log=Logger.getLogger(JsonUtils.class);

@@ -4,11 +4,11 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.xunsi.fs</groupId>
-	<artifactId>fsserver</artifactId>
+	<artifactId>fsServer</artifactId>
 	<version>1.0.0</version>
 	<packaging>jar</packaging>
 
-	<name>fsserver</name>
+	<name>fsServer</name>
 	<description>Demo project for Spring Boot</description>
 
 	<parent>
@@ -35,6 +35,11 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 
 		<dependency>

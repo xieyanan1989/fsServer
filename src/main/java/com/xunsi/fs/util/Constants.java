@@ -1,8 +1,5 @@
 package com.xunsi.fs.util;
 
-import java.util.HashMap;
-import java.util.Map;
-
 public class Constants {
 
 	/**
