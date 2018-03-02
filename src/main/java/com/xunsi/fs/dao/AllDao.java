@@ -1,19 +1,14 @@
 package com.xunsi.fs.dao;
 
-import java.sql.CallableStatement;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.Types;
+import com.xunsi.fs.util.Constants;
+import oracle.jdbc.OracleTypes;
+import org.apache.log4j.Logger;
+
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
-import com.xunsi.fs.util.Constants;
-import oracle.jdbc.OracleTypes;
-
-import org.apache.log4j.Logger;
 
 
 public class AllDao {
