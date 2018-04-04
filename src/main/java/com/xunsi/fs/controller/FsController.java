@@ -2,6 +2,7 @@ package com.xunsi.fs.controller;
 
 import com.xunsi.fs.service.AllService;
 import com.xunsi.fs.util.*;
+import org.apache.log4j.Logger;
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -19,6 +20,7 @@ import java.util.Map;
 @RestController
 public class FsController {
 
+    private Logger log=Logger.getLogger(getClass());
     @Autowired
     AllService allService;
 
@@ -107,6 +109,7 @@ public class FsController {
      */
     @RequestMapping(value = "/pro/cates")
     public String getCates(@RequestParam String sig,@RequestParam String json){
+        log.info("sig="+sig+",json="+json);
         boolean valid = MD5Tools.valid(json, sig);
         if(valid == false){
             return "{\"msg\":"+ Constants.RESPONSE_SIGNERROR+"}";
