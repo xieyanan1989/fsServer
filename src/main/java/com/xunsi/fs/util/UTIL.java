@@ -12,15 +12,15 @@ public class UTIL {
 	  * 测试
    * 图片临时存放路径
    */
-	public static String temporary = "E:\\temp\\";
-	public static String user_img = "E:\\userimg\\";
+//	public static String temporary = "E:\\temp\\";
+//	public static String user_img = "E:\\userimg\\";
 //	public static String tempurl = "HTTP://127.0.0.1:80/ImagesUploaded/";
 	
 	/**
 	 * 正式
 	 */
-//	public static String temporary = "//var//www//html//img_tempdir//"; 
-	
+	public static String temporary = "//var//www//html//img_tempdir//";
+	public static String user_img = "//var//www//html//img_user//";
 	public static int fileChannelCopy(String olddir, String newdir) {
 		int result = 0 ;
 		FileInputStream fi = null;
