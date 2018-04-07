@@ -51,25 +51,26 @@ public class AllDao {
 	/**
 	 * 注册
 	 * @param userName 用户名
-	 * @param password	密码
-	 * @param blat 纬度
-	 * @param blog 经度
-	 * @param userimg 头像地址
-	 * @param address 用户地址
-	 * @param countryId 村ID
-	 * @param townId 	镇ID
-	 * @param districtId 县ID
-	 * @param cityId 	市ID
+	 * @param password    密码
 	 * @param provinceId 省ID
+	 * @param cityId    市ID
+	 * @param districtId 县ID
+	 * @param townId    镇ID
+	 * @param countryId 村ID
+	 * @param address 用户地址
+	 * @param userimg 头像地址
+	 * @param blog 经度
+	 * @param blat 纬度
+	 * @param geoHashBase32
 	 * @return
 	 */
-	public int regist(String userName, String password, String provinceId, String cityId, String districtId, String townId, String countryId, String address, String userimg, Double blog, Double blat) {
+	public int regist(String userName, String password, String provinceId, String cityId, String districtId, String townId, String countryId, String address, String userimg, Double blog, Double blat, String geoHashBase32) {
 		Connection conn = null;
 		CallableStatement cs = null;
 		int result = 0;
 		try {
 			conn = DatabaseConnection.getInstance().getConnection();
-			cs = conn.prepareCall("{CALL BA_USER.REGIST(?,?,?,?,?,?,?,?,?,?,?,?)}");
+			cs = conn.prepareCall("{CALL BA_USER.REGIST(?,?,?,?,?,?,?,?,?,?,?,?,?)}");
 			cs.setString(1, userName);
 			cs.setString(2, password);
 			cs.setString(3, provinceId);
@@ -81,9 +82,10 @@ public class AllDao {
 			cs.setString(9, userimg);
 			cs.setDouble(10, blog);
 			cs.setDouble(11, blat);
-			cs.registerOutParameter(12, Types.VARCHAR);
+			cs.setString(12, geoHashBase32);
+			cs.registerOutParameter(13, Types.VARCHAR);
 			if( !cs.execute() ) {
-				result = cs.getInt(12);
+				result = cs.getInt(13);
 			}
 		} catch (Exception e) {
 			log.debug("error", e);
@@ -391,7 +393,7 @@ public class AllDao {
 		String sql = "";
 		try {
 			conn = DatabaseConnection.getInstance().getConnection();
-			sql = "SELECT P.USER_NAME,P.PRO_ID,P.CATE_ID,P.CATE_NAME,P.PROVINCE_ID,P.CITY_ID,P.DISTRICT_ID,P.TOWN_ID,P.COUNTRY_ID "
+			sql = "SELECT P.USER_NAME,P.PRO_ID,P.CATE_ID,P.CATE_NAME,P.PROVINCE_ID,P.CITY_ID,P.DISTRICT_ID,P.TOWN_ID,P.COUNTRY_ID, "
 				+" P.SALE_TYPE,P.SALE_DETAIL,P.SALE_TITLE,P.IMG_URL,P.SALE_COUNT,P.SALE_MEA,U.B_LONGITUDE,U.B_LATITUDE,U.SALE_SINGLE "
 				+" FROM BA_PRO_INFO P,BA_USER_INFO U WHERE P.USER_NAME = U.USER_NAME AND P.SALE_TYPE = ? AND " 
 				+" P.CATE_ID = ? AND P.CATE_TYPE = ? ";
@@ -656,5 +658,52 @@ public class AllDao {
 			if (conn != null) try { conn.close(); } catch (Exception e) { } 
 		}
 		return map;
+	}
+
+	public List<Map> getProNearby(String geoHash) {
+		Connection conn = null;
+		PreparedStatement ps = null;
+		List list = new ArrayList();
+		ResultSet rs = null;
+		String sql = "";
+		try {
+			conn = DatabaseConnection.getInstance().getConnection();
+			sql = "SELECT P.USER_NAME,P.PRO_ID,P.CATE_ID,P.CATE_NAME,P.PROVINCE_ID,P.CITY_ID,P.DISTRICT_ID,P.TOWN_ID,P.COUNTRY_ID, "
+					+" P.SALE_TYPE,P.SALE_DETAIL,P.SALE_TITLE,P.IMG_URL,P.SALE_COUNT,P.SALE_MEA,U.B_LONGITUDE,U.B_LATITUDE,P.SALE_SINGLE "
+					+" FROM BA_PRO_INFO P,BA_USER_INFO U WHERE P.USER_NAME = U.USER_NAME AND P.GEO_HASH LIKE ?";
+			ps = conn.prepareStatement(sql);
+			ps.setString(1,geoHash+"%");
+			rs = ps.executeQuery();
+			while (rs.next()) {
+				Map<String,String> maps = new HashMap<String, String>();
+				maps.put("username", rs.getString(1));
+				maps.put("proid", rs.getString(2));
+				maps.put("cateid", rs.getString(3));
+				maps.put("catename", rs.getString(4));
+				maps.put("provinceId", rs.getString(5));
+				maps.put("cityId", rs.getString(6));
+				maps.put("districtId", rs.getString(7));
+				maps.put("townId", rs.getString(8));
+				maps.put("countryId", rs.getString(9));
+				maps.put("saletype", rs.getString(10));
+				maps.put("saledetail", rs.getString(11));
+				maps.put("saletitle", rs.getString(12));
+				maps.put("imgurl", rs.getString(13));
+				maps.put("salecount", rs.getString(14));
+				maps.put("salemea", rs.getString(15));
+				maps.put("blog", rs.getString(16));
+				maps.put("blat", rs.getString(17));
+				maps.put("salesingle", rs.getString(18));
+				list.add(maps);
+			}
+		} catch (Exception e) {
+			log.debug("error", e);
+			e.printStackTrace();
+			return null;
+		}finally{
+			if (ps != null) try { ps.close(); } catch (Exception e) { }
+			if (conn != null) try { conn.close(); } catch (Exception e) { }
+		}
+		return list;
 	}
 }

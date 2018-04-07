@@ -6,6 +6,7 @@ import org.apache.commons.fileupload.FileUploadException;
 import org.apache.commons.fileupload.disk.DiskFileItemFactory;
 import org.apache.commons.fileupload.servlet.ServletFileUpload;
 import org.apache.log4j.Logger;
+import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -67,8 +68,7 @@ public class UploadUtil {
     	fileUpload.setHeaderEncoding("UTF-8");  
     	response.setContentType("text/html;charset=utf-8");  
 
-    	PrintWriter out = response.getWriter();  
-    	/** 
+    	/**
     	 * 从request得到 所有 上传域的列表 
     	 */  
     	List fileList = null;  
@@ -85,7 +85,7 @@ public class UploadUtil {
     			return map;  
     		}  
     		e.printStackTrace();  
-    	}  
+    	}
     	/** 
     	 * 没有上传文件 
     	 */  
@@ -177,7 +177,7 @@ public class UploadUtil {
     				if(!diskFile.exists()) {  
     					diskFile.createNewFile();  
     				}  
-    				fileItem.write(diskFile);  
+    				fileItem.write(diskFile);
     				map.put("msg","0");
 //    				map.put("result","成功");
     				map.put("size",String.valueOf(size));
@@ -188,7 +188,7 @@ public class UploadUtil {
     				//                        map.put("result",restr);
     			} catch (Exception e) {  
     				e.printStackTrace();  
-    			}  
+    			}
 
     			//                    fileInfo = new HashMap();  
     			//                    fileInfo.put("size", String.valueOf(size));  
