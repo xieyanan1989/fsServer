@@ -394,7 +394,7 @@ public class AllDao {
 		try {
 			conn = DatabaseConnection.getInstance().getConnection();
 			sql = "SELECT P.USER_NAME,P.PRO_ID,P.CATE_ID,P.CATE_NAME,P.PROVINCE_ID,P.CITY_ID,P.DISTRICT_ID,P.TOWN_ID,P.COUNTRY_ID, "
-				+" P.SALE_TYPE,P.SALE_DETAIL,P.SALE_TITLE,P.IMG_URL,P.SALE_COUNT-P.SALE_CUR_COUNT,P.SALE_MEA,U.B_LONGITUDE,U.B_LATITUDE,U.SALE_SINGLE "
+				+" P.SALE_TYPE,P.SALE_DETAIL,P.SALE_TITLE,P.IMG_URL,P.SALE_COUNT-P.SALE_CUR_COUNT,P.SALE_MEA,U.B_LONGITUDE,U.B_LATITUDE,U.SALE_SINGLE,P.GEO_HASH "
 				+" FROM BA_PRO_INFO P,BA_USER_INFO U WHERE P.USER_NAME = U.USER_NAME AND P.SALE_TYPE = ? AND " 
 				+" P.CATE_ID = ? AND P.CATE_TYPE = ? ";
 			if(townId != "" || !townId.equals("")){
@@ -434,6 +434,7 @@ public class AllDao {
 				maps.put("blog", rs.getString(16));
 				maps.put("blat", rs.getString(17));
 				maps.put("salesingle", rs.getString(18));
+                maps.put("geoHash", rs.getString(19));
 				list.add(maps);
 			}
 			map.put("msg",0);
@@ -669,7 +670,7 @@ public class AllDao {
 		try {
 			conn = DatabaseConnection.getInstance().getConnection();
 			sql = "SELECT P.USER_NAME,P.PRO_ID,P.CATE_ID,P.CATE_NAME,P.PROVINCE_ID,P.CITY_ID,P.DISTRICT_ID,P.TOWN_ID,P.COUNTRY_ID, "
-					+" P.SALE_TYPE,P.SALE_DETAIL,P.SALE_TITLE,P.IMG_URL,P.SALE_COUNT-P.SALE_CUR_COUNT,P.SALE_MEA,U.B_LONGITUDE,U.B_LATITUDE,P.SALE_SINGLE "
+					+" P.SALE_TYPE,P.SALE_DETAIL,P.SALE_TITLE,P.IMG_URL,P.SALE_COUNT-P.SALE_CUR_COUNT,P.SALE_MEA,U.B_LONGITUDE,U.B_LATITUDE,P.SALE_SINGLE,P.GEO_HASH "
 					+" FROM BA_PRO_INFO P,BA_USER_INFO U WHERE P.USER_NAME = U.USER_NAME AND P.SALE_TYPE <> 0 AND P.GEO_HASH LIKE ?";
 			ps = conn.prepareStatement(sql);
 			ps.setString(1,geoHash+"%");
@@ -694,6 +695,7 @@ public class AllDao {
 				maps.put("blog", rs.getString(16));
 				maps.put("blat", rs.getString(17));
 				maps.put("salesingle", rs.getString(18));
+                maps.put("geoHash", rs.getString(19));
 				list.add(maps);
 			}
 		} catch (Exception e) {
