@@ -109,7 +109,7 @@ public class FsController {
      */
     @RequestMapping(value = "/pro/cates")
     public String getCates(@RequestParam String sig,@RequestParam String json){
-        log.info("sig="+sig+",json="+json);
+        log.debug("sig="+sig+",json="+json);
         boolean valid = MD5Tools.valid(json, sig);
         if(valid == false){
             return "{\"msg\":"+ Constants.RESPONSE_SIGNERROR+"}";
