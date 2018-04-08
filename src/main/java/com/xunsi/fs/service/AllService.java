@@ -1,11 +1,13 @@
 package com.xunsi.fs.service;
 
 import com.xunsi.fs.dao.AllDao;
+import com.xunsi.fs.util.GeoHash;
 import com.xunsi.fs.util.UTIL;
 import org.apache.log4j.Logger;
 import org.springframework.stereotype.Service;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 @Service
@@ -41,7 +43,8 @@ public class AllService {
 	 */
 	public Map registService(String userName,String password, String provinceId, String cityId, String districtId, String townId, String countryId, String address, String userimg, Double blog, Double blat){
 		Map map = new HashMap<String, String>();
-		int result = allDao.regist(userName,password,provinceId,cityId,districtId,townId,countryId,address,UTIL.user_dir+userimg,blog,blat);
+		GeoHash g = new GeoHash(blat, blog);
+		int result = allDao.regist(userName,password,provinceId,cityId,districtId,townId,countryId,address,UTIL.user_dir+userimg,blog,blat,g.getGeoHashBase32());
 		if(result == 0){
 			//注册成功，用户图片写入用户图片目录
 			UTIL.fileChannelCopy(userimg, userimg);
@@ -201,5 +204,9 @@ public class AllService {
 	 */
 	public Map userExistService(String userName) {
 		return allDao.exist(userName);
+	}
+
+    public List<Map> getProNearby(String geoHash) {
+		return allDao.getProNearby(geoHash);
 	}
 }

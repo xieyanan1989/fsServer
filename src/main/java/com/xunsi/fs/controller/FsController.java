@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -288,6 +290,38 @@ public class FsController {
     }
 
     /**
+     * 附近的产品
+     * @param sig
+     * @param json
+     * @return
+     */
+    @RequestMapping(value = "/pro/nearby")
+    public String proNearby(@RequestParam String sig,@RequestParam String json){
+        boolean valid = MD5Tools.valid(json, sig);
+        if(valid == false){
+            return "{\"msg\":"+ Constants.RESPONSE_SIGNERROR+"}";
+        }
+        JSONObject jsonObject = null;
+        Map map = new HashMap() ;
+        try {
+            jsonObject = new JSONObject(json);
+            String geoHash= jsonObject.getString("geoHash");
+            AllService service = new AllService();
+            List<Map> list = service.getProNearby(geoHash);
+            map.put("list",list);
+            JsonUtils.AjaxJson(map);
+            if(map == null){
+                return "{\"msg\":"+Constants.RESPONSE_USERERROR+"}";
+            }else{
+                map.put("msg", 0);
+            }
+        }catch (Exception e) {
+            return "{\"msg\":"+Constants.RESPONSE_FAIL+"}";
+        }
+        return JsonUtils.AjaxJson(map);
+    }
+
+    /**
      * 实名认证
      * @param sig
      * @param json
@@ -407,13 +441,8 @@ public class FsController {
         JSONObject jsonObject = null;
         Map map ;
         try {
-            map = UploadUtil.upload(request, response, UTIL.temporary);
-            JsonUtils.AjaxJson(map);
-            if(map == null){
-                return "{\"msg\":"+Constants.RESPONSE_USERERROR+"}";
-            }else{
-                map.put("msg", 0);
-            }
+//            map = UploadUtil.upload(request, response, UTIL.temporary);
+            map = UploadSpring.uploadImg(request, response, UTIL.temporary);
         }catch (Exception e) {
             return "{\"msg\":"+Constants.RESPONSE_FAIL+"}";
         }
