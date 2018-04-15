@@ -7,29 +7,36 @@ import java.io.IOException;
 import java.nio.channels.FileChannel;
 
 public class UTIL {
-	public static String user_dir = "userimg/";
 	 /**
 	  * 测试
    * 图片临时存放路径
    */
-	public static String temporary = "E:\\temp\\";
-	public static String user_img = "E:\\userimg\\";
+//	 public static String user_dir = "userImg/";
+//	public static String line = "\\\\";
+//	public static String temporary = "E:\\temp\\";
+//	public static String user_img = "E:\\userImg\\";
+//	 public static String pro_img = "E:\\proImg\\";
 //	public static String tempurl = "HTTP://127.0.0.1:80/ImagesUploaded/";
 	
 	/**
 	 * 正式
 	 */
-//	public static String temporary = "//var//www//html//img_tempdir//";
-//	public static String user_img = "//var//www//html//img_user//";
-	public static int fileChannelCopy(String olddir, String newdir) {
+	public static String user_dir = "userImg/";
+	public static String line = "//";
+	public static String temporary = "//var//www//html//img_tempdir//";
+	public static String user_img = "//var//www//html//img_user//";
+	public static String pro_img = "//var//www//html//img_pro//";
+	public static int fileChannelCopy(String imgUrl,String userName) {
 		int result = 0 ;
 		FileInputStream fi = null;
 		FileOutputStream fo = null;
 		FileChannel in = null;
 		FileChannel out = null;
 		try {
-			File s = new File(temporary+olddir);
-			File t = new File(user_img+newdir);
+			//判断用户文件夹是否存在，不存在则创建
+			judgeDir(userName);
+			File s = new File(temporary+imgUrl);
+			File t = new File(user_img+userName+line+imgUrl);
 			fi = new FileInputStream(s);
 			fo = new FileOutputStream(t);
 			in = fi.getChannel();//得到对应的文件通道
@@ -50,5 +57,20 @@ public class UTIL {
 			}
 		}
 		return result;
+	}
+
+	private static void judgeDir(String userName) {
+		File file = new File(user_img+userName);
+		if (file.exists()) {
+			if (file.isDirectory()) {
+				System.out.println("dir exists");
+			} else {
+				System.out.println("the same name file exists, can not create dir");
+			}
+		} else {
+			System.out.println("dir not exists, create it ...");
+			file.mkdir();
+		}
+
 	}
 }
