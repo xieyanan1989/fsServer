@@ -3,7 +3,7 @@
 <configuration debug="false">
     <!--定义日志文件的存储地址 勿在 LogBack 的配置中使用相对路径-->
     <property name="LOG_HOME" value="${user.home}/fsLog/fsServer.log" />
-
+    <!--<property name="LOG_HOME" value="/data/fsLog/fsServer.log" />-->
     <!-- 彩色日志 -->
     <!-- 彩色日志依赖的渲染类 -->
     <conversionRule conversionWord="clr" converterClass="org.springframework.boot.logging.logback.ColorConverter" />
