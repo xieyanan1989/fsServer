@@ -1,0 +1,136 @@
+2018-04-24 15:40:29.302 [main] INFO  o.s.c.a.AnnotationConfigApplicationContext - Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@2d7275fc: startup date [Tue Apr 24 15:40:29 CST 2018]; root of context hierarchy
+2018-04-24 15:40:29.939 [main] INFO  o.s.b.f.a.AutowiredAnnotationBeanPostProcessor - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2018-04-24 15:40:30.011 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'configurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$e59fab10] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-04-24 15:40:30.151 [main] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 5.3.6.Final
+2018-04-24 15:40:31.489 [main] INFO  com.xunsi.fs.FsServerApplication - No active profile set, falling back to default profiles: default
+2018-04-24 15:40:31.507 [main] INFO  o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@6e35bc3d: startup date [Tue Apr 24 15:40:31 CST 2018]; parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@2d7275fc
+2018-04-24 15:40:32.438 [main] INFO  o.springframework.cloud.context.scope.GenericScope - BeanFactory id=6d33213c-f25f-3a5b-b744-1c5f3a4b614d
+2018-04-24 15:40:32.474 [main] INFO  o.s.b.f.a.AutowiredAnnotationBeanPostProcessor - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2018-04-24 15:40:32.576 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$e59fab10] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-04-24 15:40:33.334 [main] INFO  o.s.b.c.e.tomcat.TomcatEmbeddedServletContainer - Tomcat initialized with port(s): 8080 (http)
+2018-04-24 15:40:33.353 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2018-04-24 15:40:33.355 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.27
+2018-04-24 15:40:33.586 [localhost-startStop-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2018-04-24 15:40:33.586 [localhost-startStop-1] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 2079 ms
+2018-04-24 15:40:33.839 [localhost-startStop-1] INFO  o.s.boot.web.servlet.ServletRegistrationBean - Mapping servlet: 'dispatcherServlet' to [/]
+2018-04-24 15:40:33.847 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-04-24 15:40:33.848 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-04-24 15:40:33.849 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-04-24 15:40:33.849 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
+2018-04-24 15:40:34.108 [main] WARN  o.s.c.netflix.archaius.ArchaiusAutoConfiguration - No spring.application.name found, defaulting to 'application'
+2018-04-24 15:40:34.115 [main] WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2018-04-24 15:40:34.116 [main] INFO  com.netflix.config.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2018-04-24 15:40:34.124 [main] WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2018-04-24 15:40:34.130 [main] INFO  com.netflix.config.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2018-04-24 15:40:34.522 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerAdapter - Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@6e35bc3d: startup date [Tue Apr 24 15:40:31 CST 2018]; parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@2d7275fc
+2018-04-24 15:40:34.691 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/user/regist]}" onto public java.lang.String com.xunsi.fs.controller.FsController.register(java.lang.String,java.lang.String)
+2018-04-24 15:40:34.693 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/user/reset]}" onto public java.lang.String com.xunsi.fs.controller.FsController.forgetPassword(java.lang.String,java.lang.String)
+2018-04-24 15:40:34.693 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/pro/cities]}" onto public java.lang.String com.xunsi.fs.controller.FsController.getCities(java.lang.String,java.lang.String)
+2018-04-24 15:40:34.694 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/pro/contract]}" onto public java.lang.String com.xunsi.fs.controller.FsController.madeContract(java.lang.String,java.lang.String)
+2018-04-24 15:40:34.695 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/pro/cates]}" onto public java.lang.String com.xunsi.fs.controller.FsController.getCates(java.lang.String,java.lang.String)
+2018-04-24 15:40:34.696 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/user/login]}" onto public java.lang.String com.xunsi.fs.controller.FsController.login(java.lang.String,java.lang.String)
+2018-04-24 15:40:34.696 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/pro/create]}" onto public java.lang.String com.xunsi.fs.controller.FsController.madePro(java.lang.String,java.lang.String)
+2018-04-24 15:40:34.696 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/pro/info]}" onto public java.lang.String com.xunsi.fs.controller.FsController.proShow(java.lang.String,java.lang.String)
+2018-04-24 15:40:34.697 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/pro/nearby]}" onto public java.lang.String com.xunsi.fs.controller.FsController.proNearby(java.lang.String,java.lang.String)
+2018-04-24 15:40:34.697 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/user/realname]}" onto public java.lang.String com.xunsi.fs.controller.FsController.realName(java.lang.String,java.lang.String)
+2018-04-24 15:40:34.699 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/user/chpwd]}" onto public java.lang.String com.xunsi.fs.controller.FsController.changePwd(java.lang.String,java.lang.String)
+2018-04-24 15:40:34.700 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/pro/upload]}" onto public java.lang.String com.xunsi.fs.controller.FsController.upload(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018-04-24 15:40:34.702 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/user/buy]}" onto public java.lang.String com.xunsi.fs.controller.FsController.userBuyed(java.lang.String,java.lang.String)
+2018-04-24 15:40:34.709 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/user/exist]}" onto public java.lang.String com.xunsi.fs.controller.FsController.userExist(java.lang.String,java.lang.String)
+2018-04-24 15:40:34.709 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/user/supply]}" onto public java.lang.String com.xunsi.fs.controller.FsController.userSupply(java.lang.String,java.lang.String)
+2018-04-24 15:40:34.716 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2018-04-24 15:40:34.717 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018-04-24 15:40:34.766 [main] INFO  o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-04-24 15:40:34.766 [main] INFO  o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-04-24 15:40:34.848 [main] INFO  o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-04-24 15:40:36.334 [main] WARN  o.s.c.s.e.EurekaStarterDeprecationWarningAutoConfiguration - spring-cloud-starter-eureka is deprecated as of Spring Cloud Netflix 1.4.0, please migrate to spring-cloud-starter-netflix-eureka
+2018-04-24 15:40:36.415 [main] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
+2018-04-24 15:40:36.433 [main] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter - Bean with name 'configurationPropertiesRebinder' has been autodetected for JMX exposure
+2018-04-24 15:40:36.434 [main] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter - Bean with name 'environmentManager' has been autodetected for JMX exposure
+2018-04-24 15:40:36.435 [main] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter - Bean with name 'refreshScope' has been autodetected for JMX exposure
+2018-04-24 15:40:36.438 [main] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter - Located managed bean 'environmentManager': registering with JMX server as MBean [org.springframework.cloud.context.environment:name=environmentManager,type=EnvironmentManager]
+2018-04-24 15:40:36.454 [main] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter - Located managed bean 'refreshScope': registering with JMX server as MBean [org.springframework.cloud.context.scope.refresh:name=refreshScope,type=RefreshScope]
+2018-04-24 15:40:36.582 [main] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter - Located managed bean 'configurationPropertiesRebinder': registering with JMX server as MBean [org.springframework.cloud.context.properties:name=configurationPropertiesRebinder,context=6e35bc3d,type=ConfigurationPropertiesRebinder]
+2018-04-24 15:40:36.620 [main] INFO  o.s.context.support.DefaultLifecycleProcessor - Starting beans in phase 0
+2018-04-24 15:40:36.631 [main] INFO  o.s.cloud.netflix.eureka.InstanceInfoFactory - Setting initial instance status as: STARTING
+2018-04-24 15:40:36.684 [main] INFO  com.netflix.discovery.DiscoveryClient - Initializing Eureka in region us-east-1
+2018-04-24 15:40:36.685 [main] INFO  com.netflix.discovery.DiscoveryClient - Client configured to neither register nor query for data.
+2018-04-24 15:40:36.697 [main] INFO  com.netflix.discovery.DiscoveryClient - Discovery Client initialized at timestamp 1524555636697 with initial instances count: 0
+2018-04-24 15:40:36.706 [main] INFO  o.s.c.n.e.serviceregistry.EurekaServiceRegistry - Registering application unknown with eureka with status UP
+2018-04-24 15:40:36.739 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2018-04-24 15:40:36.781 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2018-04-24 15:40:36.804 [main] INFO  org.apache.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+2018-04-24 15:40:36.865 [main] INFO  o.s.b.c.e.tomcat.TomcatEmbeddedServletContainer - Tomcat started on port(s): 8080 (http)
+2018-04-24 15:40:36.867 [main] INFO  o.s.c.n.e.s.EurekaAutoServiceRegistration - Updating port to 8080
+2018-04-24 15:40:36.871 [main] INFO  com.xunsi.fs.FsServerApplication - Started FsServerApplication in 8.963 seconds (JVM running for 9.66)
+2018-04-24 15:41:18.428 [http-nio-8080-exec-3] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+2018-04-24 15:41:18.428 [http-nio-8080-exec-3] INFO  org.springframework.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization started
+2018-04-24 15:41:18.449 [http-nio-8080-exec-3] INFO  org.springframework.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization completed in 20 ms
+2018-04-24 15:41:18.491 [http-nio-8080-exec-3] INFO  com.xunsi.fs.controller.FsController - sig:sdf
+2018-04-24 15:41:18.491 [http-nio-8080-exec-3] INFO  com.xunsi.fs.controller.FsController - json:ss
+2018-04-24 15:41:18.491 [http-nio-8080-exec-3] INFO  com.xunsi.fs.controller.FsController - Hello World
+2018-04-24 15:42:10.767 [main] INFO  o.s.c.a.AnnotationConfigApplicationContext - Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@2d7275fc: startup date [Tue Apr 24 15:42:10 CST 2018]; root of context hierarchy
+2018-04-24 15:42:11.224 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 5.3.6.Final
+2018-04-24 15:42:11.598 [main] INFO  o.s.b.f.a.AutowiredAnnotationBeanPostProcessor - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2018-04-24 15:42:11.645 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'configurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$518d50c1] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-04-24 15:42:12.255 [main] INFO  com.xunsi.fs.FsServerApplication - No active profile set, falling back to default profiles: default
+2018-04-24 15:42:12.278 [main] INFO  o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@66ac5762: startup date [Tue Apr 24 15:42:12 CST 2018]; parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@2d7275fc
+2018-04-24 15:42:13.217 [main] INFO  o.springframework.cloud.context.scope.GenericScope - BeanFactory id=6d33213c-f25f-3a5b-b744-1c5f3a4b614d
+2018-04-24 15:42:13.243 [main] INFO  o.s.b.f.a.AutowiredAnnotationBeanPostProcessor - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2018-04-24 15:42:13.322 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$518d50c1] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-04-24 15:42:13.851 [main] INFO  o.s.b.c.e.tomcat.TomcatEmbeddedServletContainer - Tomcat initialized with port(s): 8080 (http)
+2018-04-24 15:42:13.869 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2018-04-24 15:42:13.871 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.27
+2018-04-24 15:42:14.107 [localhost-startStop-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2018-04-24 15:42:14.107 [localhost-startStop-1] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1829 ms
+2018-04-24 15:42:14.302 [localhost-startStop-1] INFO  o.s.boot.web.servlet.ServletRegistrationBean - Mapping servlet: 'dispatcherServlet' to [/]
+2018-04-24 15:42:14.314 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-04-24 15:42:14.315 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-04-24 15:42:14.315 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-04-24 15:42:14.316 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
+2018-04-24 15:42:14.580 [main] WARN  o.s.c.netflix.archaius.ArchaiusAutoConfiguration - No spring.application.name found, defaulting to 'application'
+2018-04-24 15:42:14.586 [main] WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2018-04-24 15:42:14.586 [main] INFO  com.netflix.config.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2018-04-24 15:42:14.594 [main] WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2018-04-24 15:42:14.594 [main] INFO  com.netflix.config.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2018-04-24 15:42:14.965 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerAdapter - Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@66ac5762: startup date [Tue Apr 24 15:42:12 CST 2018]; parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@2d7275fc
+2018-04-24 15:42:15.080 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/user/regist]}" onto public java.lang.String com.xunsi.fs.controller.FsController.register(java.lang.String,java.lang.String)
+2018-04-24 15:42:15.081 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/user/login]}" onto public java.lang.String com.xunsi.fs.controller.FsController.login(java.lang.String,java.lang.String)
+2018-04-24 15:42:15.082 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/pro/cities]}" onto public java.lang.String com.xunsi.fs.controller.FsController.getCities(java.lang.String,java.lang.String)
+2018-04-24 15:42:15.082 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/pro/contract]}" onto public java.lang.String com.xunsi.fs.controller.FsController.madeContract(java.lang.String,java.lang.String)
+2018-04-24 15:42:15.082 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/user/reset]}" onto public java.lang.String com.xunsi.fs.controller.FsController.forgetPassword(java.lang.String,java.lang.String)
+2018-04-24 15:42:15.082 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/pro/cates]}" onto public java.lang.String com.xunsi.fs.controller.FsController.getCates(java.lang.String,java.lang.String)
+2018-04-24 15:42:15.083 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/pro/create]}" onto public java.lang.String com.xunsi.fs.controller.FsController.madePro(java.lang.String,java.lang.String)
+2018-04-24 15:42:15.083 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/pro/info]}" onto public java.lang.String com.xunsi.fs.controller.FsController.proShow(java.lang.String,java.lang.String)
+2018-04-24 15:42:15.083 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/pro/nearby]}" onto public java.lang.String com.xunsi.fs.controller.FsController.proNearby(java.lang.String,java.lang.String)
+2018-04-24 15:42:15.084 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/user/realname]}" onto public java.lang.String com.xunsi.fs.controller.FsController.realName(java.lang.String,java.lang.String)
+2018-04-24 15:42:15.084 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/user/chpwd]}" onto public java.lang.String com.xunsi.fs.controller.FsController.changePwd(java.lang.String,java.lang.String)
+2018-04-24 15:42:15.085 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/pro/upload]}" onto public java.lang.String com.xunsi.fs.controller.FsController.upload(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018-04-24 15:42:15.085 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/user/buy]}" onto public java.lang.String com.xunsi.fs.controller.FsController.userBuyed(java.lang.String,java.lang.String)
+2018-04-24 15:42:15.086 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/user/exist]}" onto public java.lang.String com.xunsi.fs.controller.FsController.userExist(java.lang.String,java.lang.String)
+2018-04-24 15:42:15.086 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/user/supply]}" onto public java.lang.String com.xunsi.fs.controller.FsController.userSupply(java.lang.String,java.lang.String)
+2018-04-24 15:42:15.092 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2018-04-24 15:42:15.093 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018-04-24 15:42:15.140 [main] INFO  o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-04-24 15:42:15.140 [main] INFO  o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-04-24 15:42:15.200 [main] INFO  o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-04-24 15:42:16.383 [main] WARN  o.s.c.s.e.EurekaStarterDeprecationWarningAutoConfiguration - spring-cloud-starter-eureka is deprecated as of Spring Cloud Netflix 1.4.0, please migrate to spring-cloud-starter-netflix-eureka
+2018-04-24 15:42:16.446 [main] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
+2018-04-24 15:42:16.456 [main] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter - Bean with name 'configurationPropertiesRebinder' has been autodetected for JMX exposure
+2018-04-24 15:42:16.458 [main] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter - Bean with name 'environmentManager' has been autodetected for JMX exposure
+2018-04-24 15:42:16.460 [main] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter - Bean with name 'refreshScope' has been autodetected for JMX exposure
+2018-04-24 15:42:16.465 [main] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter - Located managed bean 'environmentManager': registering with JMX server as MBean [org.springframework.cloud.context.environment:name=environmentManager,type=EnvironmentManager]
+2018-04-24 15:42:16.476 [main] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter - Located managed bean 'refreshScope': registering with JMX server as MBean [org.springframework.cloud.context.scope.refresh:name=refreshScope,type=RefreshScope]
+2018-04-24 15:42:16.515 [main] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter - Located managed bean 'configurationPropertiesRebinder': registering with JMX server as MBean [org.springframework.cloud.context.properties:name=configurationPropertiesRebinder,context=66ac5762,type=ConfigurationPropertiesRebinder]
+2018-04-24 15:42:16.552 [main] INFO  o.s.context.support.DefaultLifecycleProcessor - Starting beans in phase 0
+2018-04-24 15:42:16.564 [main] INFO  o.s.cloud.netflix.eureka.InstanceInfoFactory - Setting initial instance status as: STARTING
+2018-04-24 15:42:16.617 [main] INFO  com.netflix.discovery.DiscoveryClient - Initializing Eureka in region us-east-1
+2018-04-24 15:42:16.617 [main] INFO  com.netflix.discovery.DiscoveryClient - Client configured to neither register nor query for data.
+2018-04-24 15:42:16.639 [main] INFO  com.netflix.discovery.DiscoveryClient - Discovery Client initialized at timestamp 1524555736631 with initial instances count: 0
+2018-04-24 15:42:16.657 [main] INFO  o.s.c.n.e.serviceregistry.EurekaServiceRegistry - Registering application unknown with eureka with status UP
+2018-04-24 15:42:16.689 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2018-04-24 15:42:16.717 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2018-04-24 15:42:16.743 [main] INFO  org.apache.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+2018-04-24 15:42:16.777 [main] INFO  o.s.b.c.e.tomcat.TomcatEmbeddedServletContainer - Tomcat started on port(s): 8080 (http)
+2018-04-24 15:42:16.778 [main] INFO  o.s.c.n.e.s.EurekaAutoServiceRegistration - Updating port to 8080
+2018-04-24 15:42:16.784 [main] INFO  com.xunsi.fs.FsServerApplication - Started FsServerApplication in 7.74 seconds (JVM running for 8.6)
