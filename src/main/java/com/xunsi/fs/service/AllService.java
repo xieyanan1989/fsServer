@@ -44,10 +44,10 @@ public class AllService {
 	public Map registService(String userName,String password, String provinceId, String cityId, String districtId, String townId, String countryId, String address, String userimg, Double blog, Double blat){
 		Map map = new HashMap<String, String>();
 		GeoHash g = new GeoHash(blat, blog);
-		int result = allDao.regist(userName,password,provinceId,cityId,districtId,townId,countryId,address,UTIL.user_dir+userimg,blog,blat,g.getGeoHashBase32());
+		int result = allDao.regist(userName,password,provinceId,cityId,districtId,townId,countryId,address,UTIL.user_dir+userName+"/"+userimg,blog,blat,g.getGeoHashBase32());
 		if(result == 0){
 			//注册成功，用户图片写入用户图片目录
-			UTIL.fileChannelCopy(userimg, userimg);
+			UTIL.fileChannelCopy(userimg,userName);
 		}else{
 			log.debug("registService 注册异常，数据库返回码："+map.get("msg"));
 		}
@@ -111,7 +111,18 @@ public class AllService {
 		//图片保存，从临时目录到商品副目录 imgurl
 		
 		// 数据写入
-		return allDao.addProInfo(username,cateid,saletype,saledetail,saletitle,imgurl,salecount,salemea,salesingle,sendOrnot,bookTime,proPrice,catetype);
+		Map map = allDao.addProInfo(username,cateid,saletype,saledetail,saletitle,username+"/"+imgurl,salecount,salemea,salesingle,sendOrnot,bookTime,proPrice,catetype);
+		int result = (int) map.get("msg");
+		if(result ==0){
+			//注册成功，用户图片写入用户图片目录
+			String[] urls = imgurl.split("\\,");
+			for(String url : urls){
+				UTIL.fileChannelCopy(url,username);
+			}
+		}else{
+			log.debug("addProInfo 创建商品异常，数据库返回码："+map.get("msg"));
+		}
+		return map;
 	}
 	/**
 	 * 客户用户达成契约
