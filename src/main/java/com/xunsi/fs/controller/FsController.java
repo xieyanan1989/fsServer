@@ -71,6 +71,8 @@ public class FsController {
                 map.put("msg", 0);
             }
         }catch (Exception e) {
+            e.printStackTrace();
+            log.info("e:",e);
             return "{\"msg\":"+Constants.RESPONSE_FAIL+"}";
         }
         return JsonUtils.AjaxJson(map);
@@ -103,6 +105,8 @@ public class FsController {
                 map.put("msg", 0);
             }
         }catch (Exception e) {
+            e.printStackTrace();
+            log.info("e:",e);
             return "{\"msg\":"+Constants.RESPONSE_FAIL+"}";
         }
         return JsonUtils.AjaxJson(map);
@@ -136,6 +140,8 @@ public class FsController {
                 map.put("msg", 0);
             }
         }catch (Exception e) {
+            e.printStackTrace();
+            log.info("e:",e);
             return "{\"msg\":"+Constants.RESPONSE_FAIL+"}";
         }
         return JsonUtils.AjaxJson(map);
@@ -168,6 +174,8 @@ public class FsController {
                 map.put("msg", 0);
             }
         }catch (Exception e) {
+            e.printStackTrace();
+            log.info("e:",e);
             return "{\"msg\":"+Constants.RESPONSE_FAIL+"}";
         }
         return JsonUtils.AjaxJson(map);
@@ -206,6 +214,8 @@ public class FsController {
                 map.put("msg", 0);
             }
         }catch (Exception e) {
+            e.printStackTrace();
+            log.info("e:",e);
             return "{\"msg\":"+Constants.RESPONSE_FAIL+"}";
         }
         return JsonUtils.AjaxJson(map);
@@ -250,6 +260,8 @@ public class FsController {
                 map.put("msg", 0);
             }
         }catch (Exception e) {
+            e.printStackTrace();
+            log.info("e:",e);
             return "{\"msg\":"+Constants.RESPONSE_FAIL+"}";
         }
         return JsonUtils.AjaxJson(map);
@@ -289,6 +301,8 @@ public class FsController {
                 map.put("msg", 0);
             }
         }catch (Exception e) {
+            e.printStackTrace();
+            log.info("e:",e);
             return "{\"msg\":"+Constants.RESPONSE_FAIL+"}";
         }
         return JsonUtils.AjaxJson(map);
@@ -321,6 +335,8 @@ public class FsController {
                 map.put("msg", 0);
             }
         }catch (Exception e) {
+            e.printStackTrace();
+            log.info("e:",e);
             return "{\"msg\":"+Constants.RESPONSE_FAIL+"}";
         }
         return JsonUtils.AjaxJson(map);
@@ -357,6 +373,8 @@ public class FsController {
                 map.put("msg", 0);
             }
         }catch (Exception e) {
+            e.printStackTrace();
+            log.info("e:",e);
             return "{\"msg\":"+Constants.RESPONSE_FAIL+"}";
         }
         return JsonUtils.AjaxJson(map);
@@ -398,6 +416,8 @@ public class FsController {
                 map.put("msg", 0);
             }
         }catch (Exception e) {
+            e.printStackTrace();
+            log.info("e:",e);
             return "{\"msg\":"+Constants.RESPONSE_FAIL+"}";
         }
         return JsonUtils.AjaxJson(map);
@@ -432,6 +452,8 @@ public class FsController {
                 map.put("msg", 0);
             }
         }catch (Exception e) {
+            e.printStackTrace();
+            log.info("e:",e);
             return "{\"msg\":"+Constants.RESPONSE_FAIL+"}";
         }
         return JsonUtils.AjaxJson(map);
@@ -449,6 +471,8 @@ public class FsController {
 //            map = UploadUtil.upload(request, response, UTIL.temporary);
             map = UploadSpring.uploadImg(request, response, UTIL.temporary);
         }catch (Exception e) {
+            e.printStackTrace();
+            log.info("e:",e);
             return "{\"msg\":"+Constants.RESPONSE_FAIL+"}";
         }
         return JsonUtils.AjaxJson(map);
@@ -484,6 +508,8 @@ public class FsController {
                 map.put("msg", 0);
             }
         }catch (Exception e) {
+            e.printStackTrace();
+            log.info("e:",e);
             return "{\"msg\":"+Constants.RESPONSE_FAIL+"}";
         }
         return JsonUtils.AjaxJson(map);
@@ -514,6 +540,8 @@ public class FsController {
                 map.put("msg", 0);
             }
         }catch (Exception e) {
+            e.printStackTrace();
+            log.info("e:",e);
             return "{\"msg\":"+Constants.RESPONSE_FAIL+"}";
         }
         return JsonUtils.AjaxJson(map);
@@ -549,6 +577,8 @@ public class FsController {
                 map.put("msg", 0);
             }
         }catch (Exception e) {
+            e.printStackTrace();
+            log.info("e:",e);
             return "{\"msg\":"+Constants.RESPONSE_FAIL+"}";
         }
         return JsonUtils.AjaxJson(map);

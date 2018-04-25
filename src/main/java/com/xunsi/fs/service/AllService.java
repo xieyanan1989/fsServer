@@ -4,6 +4,7 @@ import com.xunsi.fs.dao.AllDao;
 import com.xunsi.fs.util.GeoHash;
 import com.xunsi.fs.util.UTIL;
 import org.apache.log4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import java.util.HashMap;
@@ -13,8 +14,8 @@ import java.util.Map;
 @Service
 public class AllService {
 
-	
-	protected Logger log=Logger.getLogger(getClass());
+
+	private static final org.slf4j.Logger log = LoggerFactory.getLogger(AllService.class);
 
 	private AllDao allDao = new AllDao();
 	/**
