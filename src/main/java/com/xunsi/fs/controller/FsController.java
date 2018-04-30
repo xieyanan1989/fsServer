@@ -2,8 +2,9 @@ package com.xunsi.fs.controller;
 
 import com.xunsi.fs.service.AllService;
 import com.xunsi.fs.util.*;
-import org.apache.log4j.Logger;
 import org.json.JSONObject;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -22,7 +23,8 @@ import java.util.Map;
 @RestController
 public class FsController {
 
-    private Logger log=Logger.getLogger(getClass());
+//    private Logger log=Logger.getLogger(getClass());
+    private static final Logger log = LoggerFactory.getLogger(FsController.class);
     @Autowired
     AllService allService;
 
@@ -35,6 +37,9 @@ public class FsController {
     @RequestMapping(value = "/user/login")
     public String login(@RequestParam String sig,@RequestParam String json){
         boolean valid = MD5Tools.valid(json, sig);
+        log.info("sig:"+sig);
+        log.info("json:"+json);
+        log.info("Hello World");
         if(valid == false){
             return "{\"msg\":"+ Constants.RESPONSE_SIGNERROR+"}";
         }
@@ -66,6 +71,8 @@ public class FsController {
                 map.put("msg", 0);
             }
         }catch (Exception e) {
+            e.printStackTrace();
+            log.info("e:",e);
             return "{\"msg\":"+Constants.RESPONSE_FAIL+"}";
         }
         return JsonUtils.AjaxJson(map);
@@ -98,6 +105,8 @@ public class FsController {
                 map.put("msg", 0);
             }
         }catch (Exception e) {
+            e.printStackTrace();
+            log.info("e:",e);
             return "{\"msg\":"+Constants.RESPONSE_FAIL+"}";
         }
         return JsonUtils.AjaxJson(map);
@@ -111,7 +120,7 @@ public class FsController {
      */
     @RequestMapping(value = "/pro/cates")
     public String getCates(@RequestParam String sig,@RequestParam String json){
-        log.info("sig="+sig+",json="+json);
+        log.debug("sig="+sig+",json="+json);
         boolean valid = MD5Tools.valid(json, sig);
         if(valid == false){
             return "{\"msg\":"+ Constants.RESPONSE_SIGNERROR+"}";
@@ -131,6 +140,8 @@ public class FsController {
                 map.put("msg", 0);
             }
         }catch (Exception e) {
+            e.printStackTrace();
+            log.info("e:",e);
             return "{\"msg\":"+Constants.RESPONSE_FAIL+"}";
         }
         return JsonUtils.AjaxJson(map);
@@ -163,6 +174,8 @@ public class FsController {
                 map.put("msg", 0);
             }
         }catch (Exception e) {
+            e.printStackTrace();
+            log.info("e:",e);
             return "{\"msg\":"+Constants.RESPONSE_FAIL+"}";
         }
         return JsonUtils.AjaxJson(map);
@@ -201,6 +214,8 @@ public class FsController {
                 map.put("msg", 0);
             }
         }catch (Exception e) {
+            e.printStackTrace();
+            log.info("e:",e);
             return "{\"msg\":"+Constants.RESPONSE_FAIL+"}";
         }
         return JsonUtils.AjaxJson(map);
@@ -245,6 +260,8 @@ public class FsController {
                 map.put("msg", 0);
             }
         }catch (Exception e) {
+            e.printStackTrace();
+            log.info("e:",e);
             return "{\"msg\":"+Constants.RESPONSE_FAIL+"}";
         }
         return JsonUtils.AjaxJson(map);
@@ -284,6 +301,8 @@ public class FsController {
                 map.put("msg", 0);
             }
         }catch (Exception e) {
+            e.printStackTrace();
+            log.info("e:",e);
             return "{\"msg\":"+Constants.RESPONSE_FAIL+"}";
         }
         return JsonUtils.AjaxJson(map);
@@ -316,6 +335,8 @@ public class FsController {
                 map.put("msg", 0);
             }
         }catch (Exception e) {
+            e.printStackTrace();
+            log.info("e:",e);
             return "{\"msg\":"+Constants.RESPONSE_FAIL+"}";
         }
         return JsonUtils.AjaxJson(map);
@@ -352,6 +373,8 @@ public class FsController {
                 map.put("msg", 0);
             }
         }catch (Exception e) {
+            e.printStackTrace();
+            log.info("e:",e);
             return "{\"msg\":"+Constants.RESPONSE_FAIL+"}";
         }
         return JsonUtils.AjaxJson(map);
@@ -393,6 +416,8 @@ public class FsController {
                 map.put("msg", 0);
             }
         }catch (Exception e) {
+            e.printStackTrace();
+            log.info("e:",e);
             return "{\"msg\":"+Constants.RESPONSE_FAIL+"}";
         }
         return JsonUtils.AjaxJson(map);
@@ -427,6 +452,8 @@ public class FsController {
                 map.put("msg", 0);
             }
         }catch (Exception e) {
+            e.printStackTrace();
+            log.info("e:",e);
             return "{\"msg\":"+Constants.RESPONSE_FAIL+"}";
         }
         return JsonUtils.AjaxJson(map);
@@ -444,6 +471,8 @@ public class FsController {
 //            map = UploadUtil.upload(request, response, UTIL.temporary);
             map = UploadSpring.uploadImg(request, response, UTIL.temporary);
         }catch (Exception e) {
+            e.printStackTrace();
+            log.info("e:",e);
             return "{\"msg\":"+Constants.RESPONSE_FAIL+"}";
         }
         return JsonUtils.AjaxJson(map);
@@ -479,6 +508,8 @@ public class FsController {
                 map.put("msg", 0);
             }
         }catch (Exception e) {
+            e.printStackTrace();
+            log.info("e:",e);
             return "{\"msg\":"+Constants.RESPONSE_FAIL+"}";
         }
         return JsonUtils.AjaxJson(map);
@@ -509,6 +540,8 @@ public class FsController {
                 map.put("msg", 0);
             }
         }catch (Exception e) {
+            e.printStackTrace();
+            log.info("e:",e);
             return "{\"msg\":"+Constants.RESPONSE_FAIL+"}";
         }
         return JsonUtils.AjaxJson(map);
@@ -544,6 +577,8 @@ public class FsController {
                 map.put("msg", 0);
             }
         }catch (Exception e) {
+            e.printStackTrace();
+            log.info("e:",e);
             return "{\"msg\":"+Constants.RESPONSE_FAIL+"}";
         }
         return JsonUtils.AjaxJson(map);

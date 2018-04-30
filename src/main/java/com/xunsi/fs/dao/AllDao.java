@@ -1,8 +1,10 @@
 package com.xunsi.fs.dao;
 
 import com.xunsi.fs.util.Constants;
+import com.xunsi.fs.util.UploadSpring;
 import oracle.jdbc.OracleTypes;
 import org.apache.log4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -13,7 +15,7 @@ import java.util.Map;
 
 public class AllDao {
 
-	private Logger log=Logger.getLogger(getClass());
+	private static final org.slf4j.Logger log = LoggerFactory.getLogger(AllDao.class);
 	/**
 	 * 登陆
 	 * @param userName 用户名
