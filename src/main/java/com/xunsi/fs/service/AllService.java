@@ -209,7 +209,7 @@ public class AllService {
 		return map;
 	}
 	/**
-	 * 查询用户是否存在
+	 * 查询附近产品
 	 * @param userName
 	 * @return
 	 */
