@@ -13,7 +13,7 @@ public class GeoHash {
      * 1 2500km;2 630km;3 78km;4 30km 
      * 5 2.4km; 6 610m; 7 76m; 8 19m 
      */  
-    private int hashLength = 8; //经纬度转化为geohash长度  
+    private int hashLength = 8; //经纬度转化为geohash长度
     private int latLength = 20; //纬度转化为二进制长度  
     private int lngLength = 20; //经度转化为二进制长度  
       
@@ -244,7 +244,7 @@ public class GeoHash {
   
     public static void main(String[] args) {  
         // TODO Auto-generated method stub   
-        GeoHash g = new GeoHash(40.222012, 116.248283);
+        GeoHash g = new GeoHash(39.877153, 116.282517);
         System.out.println(g.getGeoHashBase32());  
         System.out.println(g.getGeoHashBase32For9());  
         
