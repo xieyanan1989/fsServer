@@ -264,27 +264,32 @@ public class AllDao {
 	}
 	/**
 	 * 客户用户达成契约
-	 * @param username		用户ID
-	 * @param proid			商品ID
-	 * @param salecount		销售数量
-	 * @param salemea		计量单位
-	 * @return
+	 *
+	 * @param userName        用户ID
+	 * @param proId            商品ID
+	 * @param saleCount        销售数量
+	 * @param saleMea        计量单位
+	 * @param payPwd            支付密码
+	 * @param deposit           押金
+     * @return
 	 */
-	public Map proContract(String username, String proid, String salecount,String salemea) {
+	public Map proContract(String userName, String proId, String saleCount, String saleMea, String payPwd, String deposit) {
 		Connection conn = null;
 		CallableStatement cs = null;
 		Map map = new HashMap();
 		int result = 0;
 		try {
 			conn = DatabaseConnection.getInstance().getConnection();;
-			cs = conn.prepareCall("{CALL BA_USER.PRO_CONTRACT(?,?,?,?,?)}");
-			cs.setString(1, username);
-			cs.setString(2, proid);
-			cs.setString(3, salecount);
-			cs.setString(4, salemea);
-			cs.registerOutParameter(5, Types.VARCHAR);
+			cs = conn.prepareCall("{CALL BA_PRO.PRO_CONTRACT(?,?,?,?,?,?,?)}");
+			cs.setString(1, userName);
+			cs.setString(2, proId);
+			cs.setString(3, saleCount);
+			cs.setString(4, saleMea);
+			cs.setString(5, payPwd);
+            cs.setString(6, deposit);
+			cs.registerOutParameter(7, Types.VARCHAR);
 			if( !cs.execute() ) {
-				result = cs.getInt(5);
+				result = cs.getInt(7);
 				map.put("msg", result);
 			}
 		} catch (Exception e) {

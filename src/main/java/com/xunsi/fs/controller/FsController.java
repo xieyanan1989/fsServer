@@ -198,21 +198,25 @@ public class FsController {
         try {
             jsonObject = new JSONObject(json);
             //用户ID
-            String username=jsonObject.getString("username");
+            String userName=jsonObject.getString("userName");
             //产品ID
-            String proid= jsonObject.getString("proid");
+            String proId= jsonObject.getString("proId");
             //销售数量
-            String salecount= jsonObject.getString("salecount");
+            String saleCount= jsonObject.getString("saleCount");
             //计量单位
-            String salemea= jsonObject.getString("salemea");
+            String saleMea= jsonObject.getString("saleMea");
+            //支付密码
+            String payPwd= jsonObject.getString("payPwd");
+            //押金
+            String deposit= jsonObject.getString("deposit");
             AllService service = new AllService();
-            map = service.proContract(username,proid,salecount,salemea);
+            map = service.proContract(userName,proId,saleCount,saleMea,payPwd,deposit);
             JsonUtils.AjaxJson(map);
-            if(map == null){
-                return "{\"msg\":"+Constants.RESPONSE_USERERROR+"}";
-            }else{
-                map.put("msg", 0);
-            }
+//            if(map == null){
+//                return "{\"msg\":"+Constants.RESPONSE_USERERROR+"}";
+//            }else{
+//                map.put("msg", 0);
+//            }
         }catch (Exception e) {
             e.printStackTrace();
             log.info("e:",e);

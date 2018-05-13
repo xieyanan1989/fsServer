@@ -127,15 +127,16 @@ public class AllService {
 	}
 	/**
 	 * 客户用户达成契约
-	 * @param username		用户ID
-	 * @param proid			商品ID
-	 * @param salecount		销售数量
-	 * @param salemea		计量单位
+	 * @param userName        用户ID
+	 * @param proId            商品ID
+	 * @param saleCount        销售数量
+	 * @param saleMea        计量单位
+	 * @param deposit
 	 * @return
 	 */
-	public Map proContract(String username, String proid, String salecount,String salemea) {
+	public Map proContract(String userName, String proId, String saleCount, String saleMea, String payPwd, String deposit) {
 		// TODO Auto-generated method stub
-		return allDao.proContract(username,proid,salecount,salemea);
+		return allDao.proContract(userName,proId,saleCount,saleMea,payPwd,deposit);
 	}
 	/**
 	 * 获取类别表
