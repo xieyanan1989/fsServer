@@ -592,8 +592,9 @@ public class AllDao {
 		List list = new ArrayList();
 		ResultSet rs = null;
 		CallableStatement cs = null;
+		conn = DatabaseConnection.getInstance().getConnection();
 		String condition =  " SELECT PRO_ID FROM BA_PRO_USER WHERE USER_NAME = '"+username+"' GROUP BY PRO_ID ";
-		String sql = "SELECT PRO_ID,CATE_ID,CATE_NAME,SALE_TITLE,IMG_URL,SALE_COUNT,SALE_MEA,CATE_TYPE,PRO_CREDIT,PRO_PRICE FROM BA_PRO_INFO WHERE PRO_ID IN ("+condition+") ORDER BY CREATE_TIME DESC";
+		String sql = "SELECT B.PRO_ID,B.CATE_ID,B.CATE_NAME,B.SALE_TITLE,B.IMG_URL,B.SALE_COUNT,B.SALE_MEA,B.CATE_TYPE,B.PRO_CREDIT,B.PRO_PRICE,BU.DEPOSIT  FROM BA_PRO_INFO B,BA_PRO_USER BU WHERE B.PRO_ID = BU.PRO_ID AND B.PRO_ID IN ("+condition+") ORDER BY B.CREATE_TIME DESC";
 		try {
 			cs = conn.prepareCall("{CALL BA_PRO.PAGE_CSR(?,?,?,?,?,?,?,?,?)}");
 			cs.setString(1, sql);
@@ -619,6 +620,7 @@ public class AllDao {
 				maps.put("catetype", rs.getString(8));
 				maps.put("procredit", rs.getString(9));
 				maps.put("amount", rs.getString(10));
+				maps.put("deposit", rs.getString(11));
 				list.add(maps);
             }
             map.put("totalpage", cs.getString(6));
